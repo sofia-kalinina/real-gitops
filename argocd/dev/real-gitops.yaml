@@ -1,14 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: root
+  name: real-gitops-ns
   namespace: argocd
 spec:
   project: default
   source:
     repoURL: https://github.com/sofia-kalinina/real-gitops.git
     targetRevision: main
-    path: argocd/dev
+    path: argocd/dev/real-gitops
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd
