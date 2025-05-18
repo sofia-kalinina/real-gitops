@@ -1,0 +1,5 @@
+global:
+  ingress:
+    domain: ""
+    tlsEnabled: true
+    tlsSecret: ""

@@ -1,0 +1,7 @@
+apiVersion: v2
+name: app2
+version: 0.1.0
+dependencies:
+  - name: common
+    repository: file://../common
+    version: 0.1.0

@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: app1
+  annotations:
+    kubernetes.io/tls-acme: "true"
+spec:
+    {{ include "common.ingress.tls" . }}
+    rules:
+        - host: app1.{{ include "common.ingress.domain" . }}
+          http:
+            paths:
+            - path: /
+              pathType: Prefix
+              backend:
+              service:
+                name: app1
+                port:
+                number: 80
