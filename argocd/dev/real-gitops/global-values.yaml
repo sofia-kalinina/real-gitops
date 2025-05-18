@@ -1,0 +1,5 @@
+global:
+  ingress:
+    domain: real-gitops.dev
+    tlsEnabled: true
+    tlsSecret: shared-tls-secret-dev
