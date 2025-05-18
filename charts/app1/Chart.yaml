@@ -5,3 +5,9 @@ dependencies:
   - name: common
     repository: file://../common
     version: 0.1.0
+    # This configuration tells Helm to take any values 
+    # found at the global key in the child chart's values
+    # and copy them into the global key in the parent chart's values at runtime
+    import-values:
+      - child: global
+        parent: global
