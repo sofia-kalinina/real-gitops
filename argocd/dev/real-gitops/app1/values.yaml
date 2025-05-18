@@ -1,4 +1,4 @@
 replicaCount: 2
 image:
   repository: httpd
-  tag: latest
+  tag: 2.4.63
