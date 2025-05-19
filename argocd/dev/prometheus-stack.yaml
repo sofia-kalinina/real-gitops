@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: real-gitops-prometheus-stack
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/sofia-kalinina/real-gitops.git
+    targetRevision: main
+    path: charts/real-gitops-prometheus-stack
+    helm:
+      valueFiles:
+        - ../../argocd/dev/prometheus-stack/values.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: real-gitops
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions: []

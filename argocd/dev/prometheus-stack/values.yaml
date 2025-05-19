@@ -1,0 +1,18 @@
+kube-prometheus-stack:
+  prometheus:
+    ingress:
+      hosts:
+        - prometheus.real-gitops.dev
+      tls:
+        - secretName: shared-tls-secret-dev
+          hosts:
+            - prometheus.real-gitops.dev
+
+  alertmanager:
+    ingress:
+      hosts:
+        - alertmanager.real-gitops.dev
+      tls:
+        - secretName: shared-tls-secret-dev
+          hosts:
+            - alertmanager.real-gitops.dev
