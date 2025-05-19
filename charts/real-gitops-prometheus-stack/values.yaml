@@ -1,0 +1,13 @@
+kube-prometheus-stack:
+  fullnameOverride: "real-gitops-prometheus-stack"
+
+  prometheus:
+    ingress:
+      enabled: true
+
+  alertmanager:
+    ingress:
+      enabled: true
+
+  grafana:
+    enabled: false

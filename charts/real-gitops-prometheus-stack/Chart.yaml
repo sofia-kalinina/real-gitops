@@ -1,0 +1,8 @@
+apiVersion: v2
+name: real-gitops-prometheus-stack
+version: 0.1.0
+
+dependencies:
+  - name: kube-prometheus-stack
+    version: 70.4.2
+    repository: https://prometheus-community.github.io/helm-charts
