@@ -14,9 +14,10 @@ spec:
         - ../../argocd/dev/prometheus-stack/values.yaml
   destination:
     server: https://kubernetes.default.svc
-    namespace: real-gitops
+    namespace: prometheus-stack
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
-    syncOptions: []
+    syncOptions:
+      - ServerSideApply=true
